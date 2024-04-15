@@ -4,7 +4,18 @@
 	<title>Joey's Blog</title>
 </head>
 <body>
-	<h1>Joey's Blog</h1>
-	<p>Created following the <a href="https://tutorial.djangogirls.org/en/" target="_blank">Django Girls tutorial</a></p>
+	<header>
+		<h1>Joey's Blog</h1>
+		<p>Created following the <a href="https://tutorial.djangogirls.org/en/" target="_blank">Django Girls tutorial</a></p>
+	</header>
+	
+	{% for post in posts %}
+	    <article>
+	        <time>published: {{ post.published_date }}</time>
+	        <h2><a href="">{{ post.title }}</a></h2>
+	        <p>{{ post.text|linebreaksbr }}</p>
+	    </article>
+	{% endfor %}
+
 </body>
 </html>
